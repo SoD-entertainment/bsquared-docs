@@ -25,13 +25,26 @@
 
 ## NOW 👈👈👈👈👈👈👈👈👈👈👈👈
 
+> MAKE SURE TO RUN MODULES AS SCRIPTS: `python -m scripts.init_db`
+
 **database schema**
 
 - handle !commands that require obs-websocket
 - logic to determine the length of time a scene item needs to be enabled
+
   - e.g. user triggers a dancing bear that remains on screen for x seconds
   - e.g. user triggers a sound file, which is enabled for the duration of the file itself
     - requires logic to determine how long the file is
+
+- look into data validation to enforce schema rules and ensure data is valid before being inserted into the db
+
+  - [Pydantic](https://docs.pydantic.dev/latest/)
+  - [SQLAlchemy](https://docs.sqlalchemy.org/en/20/orm/mapped_attributes.html#simple-validators)
+
+- look into Object-Relational Mapping (ORM) to define tables using Python classes (instead of hardcoding statements)
+  - [SQLAlchemy](https://www.sqlalchemy.org/)
+    - [quickstart](https://docs.sqlalchemy.org/en/20/orm/quickstart.html)
+    - [tutorial](https://docs.sqlalchemy.org/en/20/tutorial/index.html)
 
 ## NOWish-ish
 

@@ -25,6 +25,16 @@
 
 ## NOW 👈👈👈👈👈👈👈👈👈👈👈👈
 
+**database schema**
+
+- handle !commands that require obs-websocket
+- logic to determine the length of time a scene item needs to be enabled
+  - e.g. user triggers a dancing bear that remains on screen for x seconds
+  - e.g. user triggers a sound file, which is enabled for the duration of the file itself
+    - requires logic to determine how long the file is
+
+## NOWish-ish
+
 1. What other integrations do we need?
    - Soundcloud
    - Spotify
@@ -51,7 +61,7 @@
    - Twitch section:
      - tabs to switch between control modules: user list, event list, start poll button, (de)activate AFK button
 
-## NOWish
+## NOWish-ish
 
 - [venv](https://docs.python.org/3/library/venv.html)
 

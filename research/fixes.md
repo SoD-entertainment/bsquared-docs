@@ -27,3 +27,49 @@ def connect(self):
 ```
 
 ---
+
+## SQLite
+
+> `An error occurred: Incorrect number of bindings supplied. The current statement uses 1, and there are 6 supplied.`
+
+`executemany` expects a list of tuples as its second argument.
+
+BAD
+
+```python
+            # Populate access_levels table
+            cur.executemany(
+                """
+                INSERT INTO access_levels (access_level) VALUES (?);
+                """,
+                [
+                    ("banned"),
+                    ("bot"),
+                    ("viewer"),
+                    ("vip"),
+                    ("sub"),
+                    ("mod"),
+                    ("broadcaster"),
+                ],
+            )
+```
+
+NOT BAD
+
+```python
+            # Populate access_levels table
+            cur.executemany(
+                """
+                INSERT INTO access_levels (access_level) VALUES (?);
+                """,
+                [
+                    ("banned",),    👈👈 Note added commas
+                    ("bot",),
+                    ("viewer",),
+                    ("vip",),
+                    ("sub",),
+                    ("mod",),
+                    ("broadcaster",),
+                ],
+            )
+```

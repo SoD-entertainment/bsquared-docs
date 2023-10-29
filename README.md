@@ -8,7 +8,6 @@
 - [Possible Libraries and Tools](#possible-libraries-and-tools)
 - [Initial Considerations and Concerns](#initial-considerations-and-concerns)
 - [Contributions](#contributions)
-- [License](#license)
 
 ## Description
 

@@ -37,6 +37,14 @@
 2. Basic bot requirements
    - customise the GUI to show only what you want to see
 3. All integration requirements
+   - **Twitch**
+     - Create !command from GUI
+       - ❓ how to handle OBS integration
+         - scrape OBS for scenes and sources and 'click' the ones required
+         - additional options to show/hide/mute/scale/move source etc
+     - View db in GUI
+     - Moderate chat from GUI
+     - View chat in GUI
 4. Modularise functions
 5. Connect individual components (i.e. twitch to obs)
 6. GUI design

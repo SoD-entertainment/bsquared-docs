@@ -26,11 +26,22 @@
 ## NOW 👈👈👈👈👈👈👈👈👈👈👈👈
 
 1. What other integrations do we need?
+   - Soundcloud
+   - Spotify
+   - Social media (e.g. posting when stream is live)
+   - Game integration (e.g. chat interactions influence the game in real time)
+   - polls (i.e. prompt, collate, report voting results)
+   - analytics (e.g. no. of viewers)
+   - ML for moderation
+   - newsletter integration? RSS feed of headlines worth talking about while streaming?
 2. Basic bot requirements
+   - customise the GUI to show only what you want to see
 3. All integration requirements
 4. Modularise functions
 5. Connect individual components (i.e. twitch to obs)
 6. GUI design
+   - Twitch section:
+     - tabs to switch between control modules: user list, event list, start poll button, (de)activate AFK button
 
 ## NOWish
 
@@ -73,8 +84,11 @@
   - DB hook
   - Maybe SE hook to announce tip in chat????
   - Clips
+    - [Twitch API - Clips](https://dev.twitch.tv/docs/api/clips/)
     - Create, delete, list clips from current broadcast
     - POST to YouTube
+  - Analytics
+    - [Twitch API - Insights & Analytics](https://dev.twitch.tv/docs/insights/#game-developer-analytics)
 - OBS functions
   - Twitch hook
   - StreamElements hook

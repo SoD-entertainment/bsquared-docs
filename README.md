@@ -84,6 +84,7 @@ Standard Bot Component:
 - APIs
   - StreamElements
   - YouTube
+  - Twitch
 
 AI Component:
 

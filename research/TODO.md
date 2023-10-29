@@ -28,7 +28,9 @@
 1. What other integrations do we need?
 2. Basic bot requirements
 3. All integration requirements
-4. GUI design
+4. Modularise functions
+5. Connect individual components (i.e. twitch to obs)
+6. GUI design
 
 ## NOWish
 

@@ -30,6 +30,11 @@
 
 **database schema**
 
+❓❓❓❓❓❓
+Do we write indiv functions for each websocket request/event?
+Or ... just have a "slide source from A to B then hide" 👈👈 SlideAB as db param
+❓❓❓❓❓❓
+
 - handle !commands that require obs-websocket
 - logic to determine the length of time a scene item needs to be enabled
 
@@ -125,6 +130,11 @@
   - Twitch hook
   - StreamElements hook
   - Db hook (!duel?)
+  - Twitch alert popups
+    - handle dollarydoos separately
+    - display regular alert for all other amounts
+  - StreamElements alert popups
+    - display alert for donos
 - DB functions
   - Twitch hook
   - StreamElements hook

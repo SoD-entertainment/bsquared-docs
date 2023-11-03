@@ -21,20 +21,12 @@ pip freeze > requirements.txt
 
 In order to import modules using package syntax, you need to create an empty `__init__.py` file in each folder & subfolder.
 
-If you need to set up package-wide state, or provide convenient access to a deeply nested function/class, you can whack this in:
+When running scripts, the PYTHONPATH needs to be set (to the parent directory of the src folder):
 
-```python
-# __init__.py
-from .some_subpackage.some_module import some_function as package_level_function
-```
-
-_Then, you can access `some_function` with:_
-
-```python
-import my_package
-
-my_package.package_level_function()
-```
+1. cd into the parent directory
+2. `set PYTHONPATH=%cd%`
+3. Run the module: `py -m src.folder.folder.script` (make sure there's no `.py` extension)
+4. **ENSURE ALL IMPORTS ARE THEN `from src.folder.folder.script import blah_function`**
 
 ---
 

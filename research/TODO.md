@@ -74,6 +74,8 @@ Or ... just have a "slide source from A to B then hide" 👈👈 SlideAB as db p
      - View db in GUI
      - Moderate chat from GUI
      - View chat in GUI
+     - Display chat in OBS overlay
+       - customise via GUI?
 4. Modularise functions
 5. Connect individual components (i.e. twitch to obs)
 6. GUI design

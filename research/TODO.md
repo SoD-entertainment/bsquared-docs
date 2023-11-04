@@ -11,16 +11,22 @@
 
 ## Progress ✅
 
-| PHASE | Task                      | Status       | Notes                                                                        |
-| ----- | ------------------------- | ------------ | ---------------------------------------------------------------------------- |
-| 1     | Twitch                    | Init         | !hello works. Need to modularise commands & OBS/db/SE integration            |
-| 1     | DB                        | Init         | sqlite3 works fine for 'small streamer' purposes.                            |
-| 1     |                           | 👨‍💻           | Schema                                                                       |
-| 1     | Connect to OBS            | Init         | Numerous source manipulations work. See [doc](obs.md) for required requests. |
-| 1     | Connect to StreamElements | Init         | Tips event list works. Need to id other required endpoints.                  |
-| 1     | PyQt                      | Init         | New to this, so will need to allocate more time                              |
-| 1     | OpenAI                    | Postponed 🕔 | Hit instant rate limit with free account. Need to investigate further.       |
-| 1     | Discord                   | Init         | $hello works. Twitch chat relay to #twitch-chat works.                       |
+| Ph  | Task           | Status  | Notes                                                  |
+| --- | -------------- | ------- | ------------------------------------------------------ |
+| 1   | Twitch         | Init    | !hello works.                                          |
+| 1   |                |         | Need to modularise commands & OBS/db/SE integration    |
+| 1   | DB             | Init    | sqlite3 works fine for 'small streamer' purposes.      |
+| 1   |                | 👨‍💻      | Schema                                                 |
+| 1   |                | 👨‍💻      | Populating OBS tables                                  |
+| 1   | Connect to OBS | Init    | Numerous source manipulations work.                    |
+| 1   |                |         | See [doc](obs.md) for required requests.               |
+| 1   | Connect to SE  | Init    | Tips event list works.                                 |
+| 1   |                |         | Need to id other required endpoints.                   |
+| 1   | PyQt           | Init    | New to this, so will need to allocate more time        |
+| 1   | OpenAI         | 🔴Nixed | Hit instant rate limit with free account.              |
+| 1   | GPT4All        | 🟢v1.0  | !bot {message} - restricted to subs due to load on PC. |
+| 1   | Discord        | Init    | $hello works.                                          |
+| 1   | Discord        | Init    | Twitch chat relay to #twitch-chat works.               |
 
 ---
 

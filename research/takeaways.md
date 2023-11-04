@@ -2,6 +2,16 @@
 
 ## Python
 
+## getattr()
+
+> **getattr(object, name, default)**
+> Return the value of the named attribute of object. name must be a string. If the string is the name of one of the object’s attributes, the result is the value of that attribute. For example, getattr(x, 'foobar') is equivalent to x.foobar.
+
+```python
+def send_request(self, request_var):
+    response = self.ws.call(getattr(requests, request))   # equiv requests.request_var
+```
+
 ## requirements.txt
 
 Multiple packages can be installed (i.e. equiv of `npm i` / `package.json`) with a `requirements.txt` file in the `root` of the project.
@@ -28,6 +38,30 @@ When running scripts, the PYTHONPATH needs to be set (to the parent directory of
 3. Run the module: `py -m src.folder.folder.script` (make sure there's no `.py` extension)
 4. **ENSURE ALL IMPORTS ARE THEN `from src.folder.folder.script import blah_function`**
 
+## Instances
+
+In python, instances are akin to javascript classes. You create an instance by calling a class as if it were a function.
+
+```python
+class MyClass:              # The class
+    def __init__(self, value):
+        self.value = value
+
+my_instance = MyClass(5)     # The instance of MyClass with the PROPERTY 'value'
+```
+
+In JS, we're looking at this:
+
+```javascript
+class MyClass {
+  constructor(value) {
+    this.value = value;
+  }
+}
+
+const myInstance = new MyClass(5);
+```
+
 ---
 
 ## python_dotenv
@@ -46,6 +80,11 @@ When running scripts, the PYTHONPATH needs to be set (to the parent directory of
 
 ## OBS connection
 
-- [TOML (like YAML)](https://toml.io/en/)
 - [obsws-python](https://pypi.org/project/obsws-python/) ❓
 - [obs-websocket-py](https://github.com/Elektordi/obs-websocket-py) 👈
+
+---
+
+## General Learnings
+
+- [TOML (like YAML)](https://toml.io/en/)

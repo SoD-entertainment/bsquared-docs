@@ -73,3 +73,29 @@ NOT BAD
                 ],
             )
 ```
+
+---
+
+## OOP
+
+BAD
+
+> `An error occurred: Call parameter is not a request object`
+
+This is because it's expecting an object.
+
+```py
+def send_request(self, request):
+    response = self.ws.call(getattr(requests, request))    # problem
+```
+
+NOT BAD
+
+Create an `instance`
+
+```py
+def send_request(self, request, *args, **kwargs):
+    request_class = getattr(requests, request)
+    request_instance = request_class(*args, **kwargs)
+    response = self.ws.call(request_instance)
+```

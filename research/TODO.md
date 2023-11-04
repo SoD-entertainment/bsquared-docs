@@ -19,6 +19,7 @@
 | 1   |                | 👨‍💻      | Schema                                                 |
 | 1   |                | 👨‍💻      | Populating OBS tables                                  |
 | 1   | Connect to OBS | Init    | Numerous source manipulations work.                    |
+| 1   |                |         | Move sources, slide sources, slide multiple sources.   |
 | 1   |                |         | See [doc](obs.md) for required requests.               |
 | 1   | Connect to SE  | Init    | Tips event list works.                                 |
 | 1   |                |         | Need to id other required endpoints.                   |

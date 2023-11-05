@@ -38,9 +38,11 @@
 **database schema**
 
 ❓❓❓❓❓❓
-Do we write indiv functions for each websocket request/event?
-Or ... just have a "slide source from A to B then hide" 👈👈 SlideAB as db param
-❓❓❓❓❓❓
+
+- !bot command prevents/queues all other !commands
+
+  - what to do about that?
+    ❓❓❓❓❓❓
 
 - handle !commands that require obs-websocket
 - logic to determine the length of time a scene item needs to be enabled

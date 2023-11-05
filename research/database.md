@@ -28,16 +28,14 @@
    - action_type
 
 4. Table: inputs
+
    - input_id (PK)
    - input_name
    - input_setting_id (FK -> input_settings.input_setting_id)
 
-<!-- # TODO: update fields -->
-
 5. Table: input_settings
 
    - input_setting_id (PK)
-   - input_name
    - muted
    - volume_db
 

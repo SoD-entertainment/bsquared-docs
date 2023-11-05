@@ -42,7 +42,8 @@
 - !bot command prevents/queues all other !commands
 
   - what to do about that?
-    ❓❓❓❓❓❓
+
+❓❓❓❓❓❓
 
 - handle !commands that require obs-websocket
 - logic to determine the length of time a scene item needs to be enabled

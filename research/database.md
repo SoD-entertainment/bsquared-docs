@@ -12,106 +12,128 @@
 
 ## Schema
 
-1. Table: access_levels
+### access_levels
 
-   - access_level_id (PK)
-   - access_level_name
+| access_level_id | level_name  |
+| --------------- | ----------- |
+| 1               | banned      |
+| 2               | viewer      |
+| 3               | sub         |
+| 4               | vip         |
+| 5               | mod         |
+| 6               | broadcaster |
 
-2. Table: command_responses
+### users
 
-   - command_response_id (PK)
-   - command_response
+| user_id | username | access_level_id FK | follow_date | last_seen  | streams_watched | favorite_dollarydoo FK | favourite_reward FK |
+| ------- | -------- | ------------------ | ----------- | ---------- | --------------- | ---------------------- | ------------------- |
+| 1       | bob      | 2                  | 2023-01-01  | 2023-01-01 | 1               | 1                      | 2                   |
+| 2       | sarah    | 2                  | 2023-01-02  | 2023-03-01 | 231             |                        | 6                   |
+| 3       | helena   | 4                  | 2023-01-03  | 2023-04-01 | 2034            | 13                     | 3                   |
 
-3. Table: action_types
+### user_dollarydoos
 
-   - action_type_id (PK)
-   - action_type
+| user_dollarydoo_id | user_id FK | dollarydoo_id FK | usage_count |
+| ------------------ | ---------- | ---------------- | ----------- |
+| 1                  | 23         | 1                | 3           |
+| 2                  | 523        | 1                | 43          |
+| 3                  | 754        | 3                | 1           |
 
-4. Table: inputs
+### dollarydoos
 
-   - input_id (PK)
-   - input_name
-   - input_setting_id (FK -> input_settings.input_setting_id)
+| dollarydoo_id | dollaryamount | dollaryname    | dollarydesc                                                  |
+| ------------- | ------------- | -------------- | ------------------------------------------------------------ |
+| 1             | 42            | Mindblown      | Someone's mind is blown.                                     |
+| 2             | 101           | Change Channel | Surely there's something better to watch right now ...       |
+| 3             | 666           | Jumpscare      | Triggers a loud jumpscare after an undefined length of time. |
 
-5. Table: input_settings
+### user_channel_rewards
 
-   - input_setting_id (PK)
-   - muted
-   - volume_db
+| user_channel_rewards_id | user_id FK | reward_id FK | usage_count |
+| ----------------------- | ---------- | ------------ | ----------- |
+| 1                       | 1          | 2            | 32          |
+| 2                       | 1          | 1            | 4           |
+| 3                       | 3          | 1            | 1           |
 
-6. Table: scenes
+### channel_rewards
 
-   - scene_id (PK)
-   - scene_name
+| reward_id | twitch_reward_id       | usage_count |
+| --------- | ---------------------- | ----------- |
+| 1         | jhasdfjkhasd9f8asd9f08 | 1           |
+| 2         | kjh43lkj5h234k5h2l34k5 | 32          |
+| 3         | asdhflkdjshf34875qy84s | 4           |
 
-7. Table: transform_positions
+### scenes
 
-   - transform_position_id (PK)
-   - position_x
-   - position_y
+| scene_id | scene_name |
+| -------- | ---------- |
+| 1        | STREAM     |
+| 2        | AFK        |
+| 3        | end stream |
 
-8. Table: transform_scales
+### scene_items
 
-   - transform_scale_id (PK)
-   - scale_x
-   - scale_y
+| item_id | scene_id | obs_scene_item_id | item_name  | is_enabled | duration |
+| ------- | -------- | ----------------- | ---------- | ---------- | -------- |
+| 1       | 1        | 32                | test       | 1          |          |
+| 2       | 1        | 20                | test2      | 0          |          |
+| 3       | 2        | 32                | end_stream | 1          |          |
+| 4       | 1        | 65                | soccer     | 0          | 30       |
 
-9. Table: transform_crops
+### transform_properties
 
-   - transform_crop_id (PK)
-   - crop_top
-   - crop_right
-   - crop_bottom
-   - crop_left
+| transform_id | item_id | position_x | position_y | rotation | scale_x | scale_y | crop_bottom | crop_left | crop_right | crop_top |
+| ------------ | ------- | ---------- | ---------- | -------- | ------- | ------- | ----------- | --------- | ---------- | -------- |
+| 1            | 3       | 200        | 300        | 0.0      | 1.0     | 1.0     | 0           | 0         | 0          | 0        |
+| 2            | 4       | 100        | 200        | 0.0      | 1.0     | 1.0     | 0           | 0         | 0          | 0        |
+| 3            | 6       | 150        | 250        | 0.0      | 1.5     | 1.5     | 0           | 0         | 0          | 0        |
 
-10. Table: transform_datas
+### special_inputs
 
-    - transform_data_id (PK)
-    - rotation
-    - transform_position_id (FK -> transform_positions.transform_position_id)
-    - transform_scale_id (FK -> transform_scales.transform_scale_id)
-    - transform_crop_id (FK -> transform_crops.transform_crop_id)
+| input_id | input_name |
+| -------- | ---------- |
+| 1        | 1mic       |
+| 2        | 2stream    |
+| 3        | 3music     |
 
-11. Table: scene_items
+### input_settings
 
-    - scene_item_id (PK)
-    - item_name
-    - scene_id (FK -> scenes.scene_id)
-    - transform_data_id (FK -> transform_datas.transform_data_id)
+| setting_id | input_id FK | is_muted | volume_db |
+| ---------- | ----------- | -------- | --------- |
+| 1          | 1           | 0        | 30        |
+| 2          | 2           | 0        | 60        |
+| 3          | 3           | 1        | 72        |
 
-12. Table: actions
+### input_filters
 
-    - action_id (PK)
-    - action_params
-    - action_type_id (FK -> action_types.action_type_id)
-    - input_id (FK -> inputs.input_id)
-    - scene_id (FK -> scenes.scene_id)
+| filter_id | input_id FK | filter_name | is_enabled |
+| --------- | ----------- | ----------- | ---------- |
+| 1         | 1           | compressor  | 1          |
+| 2         | 2           | noise gate  | 1          |
+| 3         | 3           | chipmunk    | 0          |
 
-13. Table: users
+### commands
 
-    - user_id (PK)
-    - username
-    - followed_on
-    - last_seen
-    - access_level_id (FK -> access_levels.access_level_id)
+| command_id | command_name | access_level_id FK | user_id FK |
+| ---------- | ------------ | ------------------ | ---------- |
+| 1          | !boo         | 2                  |            |
+| 2          | !shh         | 2                  |            |
+| 3          | !points      | 2                  |            |
+| 4          | !pinky       |                    | 3          |
 
-14. Table: commands
+### commands_actions
 
-    - command_id (PK)
-    - command_name
-    - access_level_id (FK -> access_levels.access_level_id)
-    - command_response_id (FK -> command_responses.command_response_id)
-    - action_id (FK -> actions.action_id)
+| command_id | action_id |
+| ---------- | --------- |
+| 1          | 1         |
+| 2          | 2         |
+| 3          | 4         |
 
-15. Table: user_commands
+### actions
 
-    - user_command_id (PK)
-    - command_id (FK -> commands.command_id)
-    - user_id (FK -> users.user_id)
-
-16. Table: streamelements_donations
-    - donation_id (PK)
-    - user_id (FK -> users.user_id)
-    - amount
-    - message
-    - timestamp
+| action_id | obs_method_name                 | chat_response                      |
+| --------- | ------------------------------- | ---------------------------------- |
+| 1         | toggle_scene_item_enabled       | Screamer inc!                      |
+| 2         | list_special_input_setting_mute |                                    |
+| 3         |                                 | hi, {user}.                        |
+| 4         |                                 | @{user}, you have {points} points. |

@@ -39,9 +39,6 @@
 
 ❓❓❓❓❓❓
 
-- !bot command prevents/queues all other !commands
-
-  - what to do about that?
 
 ❓❓❓❓❓❓
 
